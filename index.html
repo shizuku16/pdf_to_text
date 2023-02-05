@@ -9,7 +9,7 @@
         function hensyuu(){
             let message=document.getElementById("nyuuryoku").value;
             if(message.match(/^・/)) message=message.replace(/・/,"")
-            message=message.replace(/ /g,"").replace(/。・/g,"。\n").replace(/，/g,"、").replace(/([^。」])\n/g,"$1");
+            message=message.replace(/ /g,"").replace(/。・/g,"。\n").replace(/，/g,"、").replace(/([^。」])\n/g,"$1").replace(/」「/,"」\n「");
             document.getElementById("hensyuugo").value=message;
             navigator.clipboard.writeText(message);
         }
