@@ -13,11 +13,16 @@
             document.getElementById("hensyuugo").value=message;
             navigator.clipboard.writeText(message);
         }
+
+        function copy(message){
+            navigator.clipboard.writeText(message.value);
+        }
     </script>
 </head>
 <body>
+    体裁を整えたい文章を下にペースト<br>
     <textarea id="nyuuryoku" rows="20" cols="80" oninput="hensyuu()"></textarea><br>
-    <br>⇓<br>編集後<br>
-    <textarea id="hensyuugo" rows="20" cols="80" readonly></textarea>
+    ⇓<br>編集後(自動でコピーされています)<br>
+    <textarea id="hensyuugo" rows="20" cols="80" oninput="copy(this)"></textarea>
 </body>
 </html>
